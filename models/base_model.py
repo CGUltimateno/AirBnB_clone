@@ -9,6 +9,7 @@ class BaseModel:
     """
     Base class for all models in our hbnb clone
     """
+
     def __init__(self, *args, **kwargs):
         """
         Instantiation of a new model
