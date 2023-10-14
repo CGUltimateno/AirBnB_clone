@@ -3,7 +3,13 @@
 Module for the console
 """
 import cmd
-from models.base_model import BaseModel
+
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.user import User
+from models.city import City
+from models.state import State
 from models import storage
 import re
 import json
@@ -95,15 +101,32 @@ class Console(cmd.Cmd):
     def do_create(self, line):
         """
         Creates a new instance
+        Command line:
+        create <class name>
+        examples:
+        create City
+        create Place
+        create User
+        create State
+        create Amenity
         """
+        class_mapping = {
+            "city": City,
+            "place": Place,
+            "user": User,
+            "state": State,
+            "amenity": Amenity,
+            "review": Review,
+        }
+
         if line == "" or line is None:
             print("** class name missing **")
         elif line not in storage.classes():
             print("** class doesn't exist **")
         else:
-            new = storage.classes()[line]()
-            new.save()
-            print(new.id)
+            new_instance = storage.classes()[line]()
+            new_instance.save()
+            print(new_instance.id)
 
     def do_show(self, line):
         """
@@ -162,12 +185,12 @@ class Console(cmd.Cmd):
         Counts the number of instances of a class
         """
         args = line.split()
-        if args[0] not in storage.classes():
+        if not args:
+            print("** missing class name **")
+        elif args[0] not in storage.classes():
             print("** class doesn't exist **")
         else:
-            count = [
-                k for k, v in storage.all().items() if k.startswith([0] in k + ".")
-            ]
+            count = [k for k in storage.all().keys() if k.startswith(args[0] + ".")]
             print(len(count))
 
     def do_update(self, line):
