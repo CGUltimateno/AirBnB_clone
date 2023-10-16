@@ -70,7 +70,7 @@ class Console(cmd.Cmd):
         elif class_name not in storage.classes():
             print("** class doesn't exist **")
         elif uid is None:
-            print("** no instance found **")
+            print("** instance id missing **")
         else:
             key = class_name + "." + uid
             if key in storage.all():
