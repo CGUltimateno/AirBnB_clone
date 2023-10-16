@@ -6,15 +6,6 @@ import os
 from os.path import isfile
 
 
-def save():
-    """
-    Serializes __objects to the JSON file (path: __file_path)
-    """
-    with open(FileStorage.__file_path, "w") as f:
-        f.write(json.dumps({k: v.to_dict()
-                            for k, v in FileStorage.__objects.items()}))
-
-
 class FileStorage:
     """
     Serializes instances to a JSON file and deserializes JSON file to instances
@@ -33,6 +24,14 @@ class FileStorage:
         Sets in __objects the obj with key <obj class name>.id
         """
         FileStorage.__objects["{}.{}".format(type(obj).__name__, obj.id)] = obj
+
+    def save(self):
+        """
+        Serializes __objects to the JSON file (path: __file_path)
+        """
+        with open(FileStorage.__file_path, "w") as f:
+            f.write(json.dumps({k: v.to_dict()
+                                for k, v in FileStorage.__objects.items()}))
 
     def reload(self):
         """
