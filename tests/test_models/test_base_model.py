@@ -2,6 +2,7 @@
 """
 Unittest for BaseModel class
 """
+import time
 from unittest import TestCase
 from models.base_model import BaseModel
 from datetime import datetime
@@ -13,23 +14,20 @@ class BaseModelTest(TestCase):
     Test cases for BaseModel class
     """
 
-    def __init__(self):
-        super().__init__()
-        self.updated_at = datetime.now()
-
     def test_save(self):
         """
         Testing for save method
         """
-        self.updated_at = datetime.now()
         model = BaseModel()
-        updated = datetime.now()
-        first = model.updated_at
+        first = model.updated_at  # Store the initial updated_at datetime
 
-        self.assertEqual(first.date(), model.updated_at.date())
-        model.save()
-        updated = datetime.now()
-        second = model.updated_at
+        # Sleep for a short time to ensure a time difference
+        time.sleep(1)
+
+        model.save()  # Call save to update the updated_at attribute
+        second = model.updated_at  # Get the updated updated_at datetime
+
+        # Compare the dates of the two updated_at attributes
         self.assertNotEqual(first.date(), second.date())
         self.assertTrue(isfile("file.json"))
         self.assertLess(first, second, "Error: save() did not update time")
