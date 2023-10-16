@@ -13,10 +13,15 @@ class BaseModelTest(TestCase):
     Test cases for BaseModel class
     """
 
+    def __init__(self):
+        super().__init__()
+        self.updated_at = datetime.now()
+
     def test_save(self):
         """
         Testing for save method
         """
+        self.updated_at = datetime.now()
         model = BaseModel()
         updated = datetime.now()
         first = model.updated_at
