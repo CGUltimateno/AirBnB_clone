@@ -74,12 +74,14 @@ class Console(cmd.Cmd):
         else:
             key = class_name + "." + uid
             if key in storage.all():
-                for key, value in y.items():
-                    setattr(storage.all()[key], key, value)
-                storage.all()[key].save()
+                if not y:
+                    print("** no attributes provided for update **")
+                else:
+                    for key, value in y.items():
+                        setattr(storage.all()[key], key, value)
+                    storage.all()[key].save()
             else:
                 print("** no instance found **")
-
     def do_EOF(self, line):
         """
         exits the console
@@ -242,7 +244,8 @@ class Console(cmd.Cmd):
                             pass
                     setattr(storage.all()[key], attr, value)
                     storage.all()[key].save()
-
+            else:
+                print("** no instance found **")
 
 if __name__ == '__main__':
     Console().cmdloop()
