@@ -82,6 +82,7 @@ class Console(cmd.Cmd):
                     storage.all()[key].save()
             else:
                 print("** no instance found **")
+
     def do_EOF(self, line):
         """
         exits the console
@@ -175,7 +176,7 @@ class Console(cmd.Cmd):
         Prints all string representation of all instances
         """
         if line != "":
-            args = line.split('')
+            args = line.split()
             if args[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
@@ -246,6 +247,7 @@ class Console(cmd.Cmd):
                     storage.all()[key].save()
             else:
                 print("** no instance found **")
+
 
 if __name__ == '__main__':
     Console().cmdloop()
