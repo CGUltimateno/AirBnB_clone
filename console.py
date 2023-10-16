@@ -164,7 +164,7 @@ class Console(cmd.Cmd):
                 key = args[0] + "." + args[1]
                 if key in storage.all():
                     del storage.all()[key]
-                    storage.save()
+                    save()
                 else:
                     print("** no instance found **")
 
