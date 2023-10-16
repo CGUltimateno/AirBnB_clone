@@ -83,4 +83,3 @@ class FileStorage:
             "Review": {"place_id": str, "user_id": str,
                        "text": str}
         }
-
