@@ -30,7 +30,8 @@ class FileStorage:
         Serializes __objects to the JSON file (path: __file_path)
         """
         with open(FileStorage.__file_path, "w") as f:
-            f.write(json.dumps({k: v.to_dict() for k, v in FileStorage.__objects.items()}))
+            f.write(json.dumps({k: v.to_dict()
+                                for k, v in FileStorage.__objects.items()}))
 
     def reload(self):
         """
@@ -53,7 +54,8 @@ class FileStorage:
         from models.amenity import Amenity
         from models.place import Place
         from models.review import Review
-        return {"BaseModel": BaseModel, "User": User, "State": State, "City": City,
+        return {"BaseModel": BaseModel, "User": User,
+                "State": State, "City": City,
                 "Amenity": Amenity, "Place": Place, "Review": Review}
 
     def attributes(self):
@@ -61,13 +63,24 @@ class FileStorage:
         Returns a dictionary of valid attributes
         """
         return {
-            "BaseModel": {"id": str, "created_at": datetime.datetime, "updated_at": datetime.datetime},
-            "User": {"email": str, "password": str, "first_name": str, "last_name": str},
-            "State": {"name": str}, "City": {"state_id": str, "name": str},
-            "Amenity": {"name": str}, "Place": {"city_id": str, "user_id": str, "name": str, "description": str,
-                                                "number_rooms": int, "number_bathrooms": int, "max_guest": int,
-                                                "price_by_night": int, "latitude": float, "longitude": float,
-                                                "amenity_ids": list},
-            "Review": {"place_id": str, "user_id": str, "text": str}
+            "BaseModel": {"id": str,
+                          "created_at": datetime.datetime,
+                          "updated_at": datetime.datetime},
+            "User": {"email": str, "password": str,
+                     "first_name": str, "last_name": str},
+            "State": {"name": str},
+            "City": {"state_id": str, "name": str},
+            "Amenity": {"name": str},
+            "Place": {"city_id": str, "user_id": str,
+                      "name": str, "description": str,
+                      "number_rooms": int,
+                      "number_bathrooms": int,
+                      "max_guest": int,
+                      "price_by_night": int,
+                      "latitude": float,
+                      "longitude": float,
+                      "amenity_ids": list},
+            "Review": {"place_id": str, "user_id": str,
+                       "text": str}
         }
 

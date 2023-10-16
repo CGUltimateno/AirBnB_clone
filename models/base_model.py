@@ -24,7 +24,7 @@ class BaseModel:
                 if key == "__class__":
                     continue
                 setattr(self, key, datetime.fromisoformat(value)
-                if ("_at" in key) else value)
+                        if ("_at" in key) else value)
 
     def __str__(self):
         """

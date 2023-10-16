@@ -53,7 +53,8 @@ class Console(cmd.Cmd):
                 return ""
             match_value = re.search('^(?:"([^"]*)")?(?:, (.*))?$', attr)
             if match_value:
-                value = (match_value.group(1) or "") + (match_value.group(2) or "")
+                value = ((match_value.group(1) or "")
+                         + (match_value.group(2) or ""))
         comm = command + " " + class_name + " " + uid + " " + value
         self.onecmd(comm)
         return comm
@@ -176,7 +177,8 @@ class Console(cmd.Cmd):
             if args[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
-                print([str(v) for k, v in storage.all().items() if args[0] in k])
+                print([str(v) for k, v in
+                       storage.all().items() if args[0] in k])
         else:
             print([str(v) for k, v in storage.all().items()])
 
@@ -190,7 +192,8 @@ class Console(cmd.Cmd):
         elif args[0] not in storage.classes():
             print("** class doesn't exist **")
         else:
-            count = [k for k in storage.all().keys() if k.startswith(args[0] + ".")]
+            count = [k for k in storage.all().keys()
+                     if k.startswith(args[0] + ".")]
             print(len(count))
 
     def do_update(self, line):
