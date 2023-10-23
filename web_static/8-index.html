@@ -1,89 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/4-common.css">
-    <link rel="stylesheet" type="text/css" href="styles/3-header.css">
-    <link rel="stylesheet" type="text/css" href="styles/3-footer.css">
-    <link rel="stylesheet" type="text/css" href="styles/6-filters.css">
-    <link rel="stylesheet" type="text/css" href="styles/8-places.css">
-    <link rel="icon" type="image/png" href="./images/icon.png">
-    <link rel="icon" type="image/png" href="./images/icon_group.png">
-    <link rel="icon" type="image/png" href="./images/icon_bed.png">
-    <link rel="icon" type="image/png" href="./images/icon_bath.png">
-    <title>Airbnb</title>
-  </head>
-  <body>
-    <header>
-    </header>
-    <div class="container">
-      <section class="filters">
-	<div class="locations">
-	  <h3>States</h3>
-          <h4>California, Arizona...</h4>
-          <ul class="popover">
-            <li><h2>Arizona:</h2>
-              <ul>
-                <li>Page</li>
-                <li>Page2</li>
-              </ul>
-            </li>
-            <li><h2>California:</h2>
-              <ul>
-                <li>San Francisco</li>
-                <li> Los Altos</li>
-              </ul>
-          </ul>
+<head>
+    <title>AirBnB Clone</title>
+    <link rel="stylesheet" href="styles/4-common.css" media="all">
+    <link rel="stylesheet" href="styles/3-footer.css" media="all">
+    <link rel="stylesheet" href="styles/3-header.css" media="all">
+    <link rel="stylesheet" href="styles/6-filters.css" media="all">
+    <link rel="stylesheet" href="styles/8-places.css" media="all">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+<header>
+    <div></div>
+</header>
+<div class="container">
+    <section class="filters">
+        <div class="locations">
+            <h3>States</h3>
+            <h4>California, Arizona...</h4>
+            <ul class="popover">
+                <ul>
+                    <li>
+                        <h2>Arizona</h2>
+                    </li>
+                    <li>City 1</li>
+                    <li>City 2</li>
+                    <li>City 3</li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>California</h2>
+                    </li>
+                    <li>City 1</li>
+                    <li>City 2</li>
+                    <li>City 3</li>
+                </ul>
+            </ul>
         </div>
         <div class="amenities">
-          <h3>Amenities</h3>
-          <h4>Internet, Kitchen...</h4>
-          <ul class="popover">
-            <li>Internet</li>
-            <li>TV<li>
-            <li>Kitchen</li>
-            <li>Iron</li>
-          </ul>
+            <h3>Amenities</h3>
+            <h4>Internet, Kitchen...</h4>
+            <ul class="popover">
+                <li>Internet</li>
+                <li>Pool</li>
+            </ul>
         </div>
-	<button>Search</button>
-      </section>
-      <section class="places">
-	<h1>Places</h1>
-        <article>
-          <h2>My home</h2>
-          <div class="price_by_night">$80</div>
-          <div class="information">
-            <div class="max_guest">2 guests</div>
-            <div class="number_rooms">1 bedroom</div>
-            <div class="number_bathrooms">1 bathroom</div>
-          </div>
-          <div class="user"><strong>Owner:</strong> Longye Chen</div>
-          <div class="description">This is a lovely 1 bedroom and 1 bathroom apartment that can accomodate 2 people. It is located at the center of Shanghai and next to subway line 1, 1 stop to People Square, 2 stops to Bund, and 3 stops to Jingan Temple.</div>
-	</article>
-        <article><h2>Tiny house</h2>
-          <div class="price_by_night">$50</div>
-          <div class="information">
-            <div class="max_guest">1 guest</div>
-            <div class="number_rooms">1 bedroom</div>
-            <div class="number_bathrooms">1 bathroom</div>
-          </div>
-          <div class="user"><strong>Owner:</strong> Mel X</div>
-          <div class="description">This is a tiny, tight, and cozy getaway. Affordable and not too shabby. Perfect for those on a budget.</div>
-        </article>
-        <article><h2>A suite</h2>
-          <div class="price_by_night">$160</div>
-          <div class="information">
-            <div class="max_guest">2 guests</div>
-            <div class="number_rooms">1 bedroom</div>
-            <div class="number_bathrooms">2 bathrooms</div>
-          </div>
-          <div class="user"><strong>Owner:</strong> Christina Chiu</div>
-          <div class="description">Beautiful suite with balcony worthy of Romeo and Juliet's love story.</div>
-        </article>
-      </section>
-    </div>
-    <footer>
-      Holberton School
-    </footer>
-  </body>
+        <button>Search</button>
+    </section>
+    <section class="places">
+        <h1>Places</h1>
+        <div class="listings">
+            <article>
+                <h2>Listing 1</h2>
+                <div class="price_by_night">
+                    $50
+                </div>
+                <div class="information">
+                    <div class="icon max_guests">5 guests</div>
+                    <div class="icon number_rooms">10 rooms</div>
+                    <div class="icon number_bathrooms">7 bathrooms</div>
+                </div>
+                <div class="user">
+                    Owner: Michael Scott
+                </div>
+                <div class="description">
+                    Discover your cozy sanctuary in the heart of the city. Our charming Airbnb room is a perfect urban retreat, complete with all the essentials for a relaxing stay. Enjoy a comfortable double bed, a well-appointed private bathroom, and a small, inviting workspace. Whether you're here for work or leisure, you'll find this room to be a peaceful haven to rest and rejuvenate. Explore nearby cafes, parks, and local attractions, all just a short stroll away. Book your stay today and experience the city like a local!                </div>
+            </article>
+
+            <article>
+                <h2>Listing 2</h2>
+                <div class="price_by_night">
+                    $110
+                </div>
+                <div class="information">
+                    <div class="icon max_guests">6 guests</div>
+                    <div class="icon number_rooms">12 rooms</div>
+                    <div class="icon number_bathrooms">5 bathrooms</div>
+                </div>
+                <div class="user">
+                    Owner: Jake Smith
+                </div>
+                <div class="description">
+                    Nestled in a tranquil neighborhood, our Airbnb room offers a peaceful escape from the hustle and bustle of the city. Unwind in our spacious, sunlit room with a king-sized bed, where you'll enjoy a great night's sleep. The room features a private balcony with stunning views, perfect for your morning coffee or evening relaxation. Immerse yourself in the local culture, as we're just steps away from vibrant markets and delicious eateries. Your ideal urban retreat awaits – book now for an unforgettable stay                </div>
+            </article>
+            <article>
+                <h2>Listing 3</h2>
+                <div class="price_by_night">
+                    $120
+                </div>
+                <div class="information">
+                    <div class="icon max_guests">4 guests</div>
+                    <div class="icon number_rooms">8 rooms</div>
+                    <div class="icon number_bathrooms">4 bathrooms</div>
+                </div>
+                <div class="user">
+                    Owner: Jane Doe
+                </div>
+                <div class="description">
+                    Step into our charming Airbnb room, where comfort meets style. Your stay will be a delight with a queen-sized bed, a modern en-suite bathroom, and a cozy sitting area to unwind after a day of adventures. The room is thoughtfully designed with unique artwork and soft lighting to create a warm and inviting atmosphere. Located in the heart of the historic district, you'll be within walking distance of cultural sites, lively cafes, and the vibrant energy of the city. Reserve your stay and immerse yourself in the local charm and rich history!                </div>
+            </article>
+        </div>
+    </section>
+</div>
+<footer>Best School</footer>
+</body>
 </html>
